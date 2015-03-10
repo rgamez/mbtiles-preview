@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    </head>
+    <body>
+        <div id="map" style="width: 1000px; height: 500px;">
+        </div>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script type="text/javascript">
+        /* global L */
+        var map = L.map('map').setView([39, -22], 3);
+        L.tileLayer('http://127.0.0.1:7173/{z}/{x}/{y}.png').addTo(map);
+        </script>
+    </body>
+</html>
