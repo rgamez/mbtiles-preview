@@ -41,10 +41,16 @@ var serve = function(mbtiles) {
     app.use(express.static(__dirname + '/../www'));
     app.get('/:z/:x/:y.*', serveTile);
     app.listen(PORT);
+    console.log('Listening: 0.0.0.0:' + PORT);
 };
 
 var main = function(args) {
     var filename;
+
+    if (args.length < 3) {
+        console.error('Usage: node src/server.js file.mbtiles');
+        process.exit(-1);
+    }
 
     // Load the file
     filename = args[2];
